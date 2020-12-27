@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <img src="{{ asset('images/card-why-udacity.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{asset('images/card-why-udacity.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>

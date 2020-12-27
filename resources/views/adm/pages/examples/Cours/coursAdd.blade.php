@@ -201,7 +201,7 @@
                 <i class="fas fa-minus"></i></button>
             </div>
           </div>
-          <form action="/cours" method="POST" enctype="multipart/form-data">
+          <form action="{{route('cours.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -322,3 +322,5 @@
 <!-- /.content-wrapper -->
 
 @endsection
+
+
