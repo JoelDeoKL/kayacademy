@@ -37593,11 +37593,17 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.getFilteredCours, function(cours) {
         return _c("ul", { key: cours.id }, [
-          _c("li", [
-            _c("i", { staticClass: "fa fa-university mt-5" }),
-            _vm._v(" " + _vm._s(cours.titre_cours) + " "),
-            _c("span", [_vm._v(": " + _vm._s(cours.description))])
-          ])
+          _c(
+            "a",
+            { staticStyle: { color: "white" }, attrs: { href: "/formations" } },
+            [
+              _c("li", [
+                _c("i", { staticClass: "fa fa-university mt-5" }),
+                _vm._v(_vm._s(cours.titre_cours) + " "),
+                _c("span", [_vm._v(": " + _vm._s(cours.description))])
+              ])
+            ]
+          )
         ])
       })
     ],

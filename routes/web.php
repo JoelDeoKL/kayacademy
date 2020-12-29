@@ -35,13 +35,13 @@ Route::view('accueil', '/adm/pages/examples/accueil');
 Route::resource('cours', 'CoursController')->middleware('auth');
 Route::get('formations', 'CoursController@index1')->middleware('auth');
 Route::get('toutes_formations', 'CoursController@formations')->middleware('auth');
-Route::get('cours2/{cours}', 'CoursController@show2')->middleware('auth');
+Route::get('mes_cours/{cours}', 'CoursController@show2')->middleware('auth');
 
 Route::resource('module', 'ModuleController')->middleware('auth');
-Route::get('module2/{module}', 'ModuleController@show2')->middleware('auth');
+Route::get('les_module/{module}', 'ModuleController@show2')->middleware('auth');
 
 Route::resource('chapitre', 'ChapitreController')->middleware('auth');
-Route::get('chapitre2/{chapitre}', 'ChapitreController@show2')->middleware('auth');
+Route::get('les_chapitre/{chapitre}', 'ChapitreController@show2')->middleware('auth');
 
 Route::resource('commentaire', 'CommentairesController')->middleware('auth');
 

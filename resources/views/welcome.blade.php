@@ -14,9 +14,6 @@
                         <h1><strong>L'informatique pour tous</strong></h1>
                         <p><em>Etudiez l'informatique chez vous, sur votre SmartPhone sur votre Ordinateur portable quand vous voulez où vous voulez.<br>Formez-vous et informez les autres :)</em></p>
                         <div id="app">
-                            <div class="container pt-5">
-                                    
-                            </div>
                             <recherche-component></recherche-component>
                         </div>
                     </div>

@@ -8,7 +8,7 @@
             Aucun cours trouvé
         </div>
         <ul v-for="cours in getFilteredCours" v-bind:key="cours.id">
-            <a href=""></a><li><i class="fa fa-university mt-5"></i> {{cours.titre_cours}} <span>: {{cours.description}}</span></li>
+            <a href="/formations" style="color:white"><li><i class="fa fa-university mt-5"></i>{{cours.titre_cours}} <span>: {{cours.description}}</span></li></a>
         </ul>
     </div>
 </template>
