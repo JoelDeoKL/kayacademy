@@ -147,4 +147,8 @@ class CoursController extends Controller
             ]);
         }
     }
+
+    public function recherche(){
+        return Cours::all();
+    }
 }

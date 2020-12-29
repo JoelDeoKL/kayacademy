@@ -13,15 +13,12 @@
                     <div class="p-lg-5">
                         <h1><strong>L'informatique pour tous</strong></h1>
                         <p><em>Etudiez l'informatique chez vous, sur votre SmartPhone sur votre Ordinateur portable quand vous voulez où vous voulez.<br>Formez-vous et informez les autres :)</em></p>
-                        <form action="" class="shadow">
-                            <input type="search" class="form-control" placeholder=" Que veux-tu étudiez aujourd'hui?" name="" id="">
-                        </form>
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-university mt-5"></i> Initiation à L'infrormatique</li>
-                            <li><i class="fa fa-university mt-4"></i> Initiation à la Bureautique</li>
-                            <li><i class="fa fa-university mt-4"></i> Initiation à la Programmation Web</li>
-                            <li><i class="fa fa-university mt-4"></i> Initiation au Design...</li>
-                        </ul>
+                        <div id="app">
+                            <div class="container pt-5">
+                                    
+                            </div>
+                            <recherche-component></recherche-component>
+                        </div>
                     </div>
                 </div>
             </div>
