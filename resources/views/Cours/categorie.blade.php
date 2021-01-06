@@ -34,7 +34,7 @@
         @foreach($categories as $categorie)
 
             <div class="mt-5">
-                <a href="/cat/{{$categorie->id}}">
+                <a href="/categories/{{$categorie->id}}">
                     <div class="container shadow-md rounded">
                         <div class="row">
                             <div class="col-lg-3">

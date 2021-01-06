@@ -37592,15 +37592,15 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _vm._l(_vm.getFilteredCours, function(cours) {
-        return _c("ul", { key: cours.id }, [
+        return _c("div", { key: cours.id }, [
           _c(
             "a",
             { staticStyle: { color: "white" }, attrs: { href: "/formations" } },
             [
-              _c("li", [
+              _c("span", [
                 _c("i", { staticClass: "fa fa-university mt-5" }),
-                _vm._v(_vm._s(cours.titre_cours) + " "),
-                _c("span", [_vm._v(": " + _vm._s(cours.description))])
+                _vm._v(" " + _vm._s(cours.titre_cours) + " "),
+                _c("em", [_vm._v(": " + _vm._s(cours.description))])
               ])
             ]
           )

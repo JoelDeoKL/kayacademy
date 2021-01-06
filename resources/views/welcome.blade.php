@@ -85,7 +85,7 @@
 
                             <p>{{$categorie->description_categorie}}</p>
                             <div>
-                                <a href="{{ url('formations') }}" class="shadow btn">Voir les formations</a>
+                                <a href="/categories/{{$categorie->id}}" class="shadow btn">Voir les formations</a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                                 <img src="{{asset('storage/' . $cours->image)}}" class="img-thumnail" width=200 alt="cours-image">
                                 <div class="mask rgba-black-light flex-center">
                                     <div class="container text-white">
-                                        <a href="formation.php" class="text-white">
+                                        <a href="/mes_cours/{{$cours->id}}" class="text-white">
                                         <p style="text-transform : uppercase;">{{$cours->categorie->nom_categorie}}</p>
                                         <span style="background:orange;" class="container rounded mt-3">NOUVEAU</span>
                                         </a>

@@ -34,7 +34,7 @@
         @foreach($chapitres as $chapitre)
 
             <div class="mt-5">
-                <a href="/chapitre2/{{$chapitre->id}}">
+                <a href="/le_chapitre/{{$chapitre->id}}">
                     <div class="container shadow-md rounded">
                         <div class="row">
                             <div class="col-lg-3">

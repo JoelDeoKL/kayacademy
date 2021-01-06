@@ -7,9 +7,9 @@
         <div class="alert alert-secondary" v-if="this.q && getFilteredCours.length == 0">
             Aucun cours trouvé
         </div>
-        <ul v-for="cours in getFilteredCours" v-bind:key="cours.id">
-            <a href="/formations" style="color:white"><li><i class="fa fa-university mt-5"></i>{{cours.titre_cours}} <span>: {{cours.description}}</span></li></a>
-        </ul>
+        <div v-for="cours in getFilteredCours" v-bind:key="cours.id">
+            <a href="/formations" style="color:white"><span><i class="fa fa-university mt-5"></i> {{cours.titre_cours}} <em>: {{cours.description}}</em></span></a>
+        </div>
     </div>
 </template>
 

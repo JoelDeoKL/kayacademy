@@ -30,7 +30,6 @@ class CoursController extends Controller
         return view('adm.pages.examples.cours.cours', compact('cours', 'categories'));
     }
 
-
     public function formations()
     {
         // $cours = Cours::etat();
@@ -82,7 +81,7 @@ class CoursController extends Controller
     {
         $id = $cours->id;
         $modules = Module::where('cours_id', '=', $id)->get();
-        return view('cours/module', compact('cours', 'modules'));
+        return view('cours/formation', compact('cours', 'modules'));
     }
 
     /**

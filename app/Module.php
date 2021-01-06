@@ -12,7 +12,7 @@ class Module extends Model
     {
         return $this->belongsTo('App\Cours');
     }
-    public function chapitre()
+    public function chapitres()
     {
         return $this->hasMany('App\Chapitre');
     }

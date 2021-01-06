@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'CategorieController@index1');
 
 Route::resource('categorie', 'CategorieController')->middleware('auth');
-Route::get('cat', 'CategorieController@categorie')->middleware('auth');
-Route::get('cat/{categorie}', 'CategorieController@show2')->middleware('auth');
+Route::get('les_categories', 'CategorieController@categorie')->middleware('auth');
+Route::get('categories/{categorie}', 'CategorieController@show2')->middleware('auth');
 
 Route::view('about', '/cours/about');
 Route::view('certification', '/cours/certification');
@@ -38,10 +38,10 @@ Route::get('toutes_formations', 'CoursController@formations')->middleware('auth'
 Route::get('mes_cours/{cours}', 'CoursController@show2')->middleware('auth');
 
 Route::resource('module', 'ModuleController')->middleware('auth');
-Route::get('les_module/{module}', 'ModuleController@show2')->middleware('auth');
+Route::get('le_module/{module}', 'ModuleController@show2')->middleware('auth');
 
 Route::resource('chapitre', 'ChapitreController')->middleware('auth');
-Route::get('les_chapitre/{chapitre}', 'ChapitreController@show2')->middleware('auth');
+Route::get('le_chapitre/{chapitre}', 'ChapitreController@show2')->middleware('auth');
 
 Route::resource('commentaire', 'CommentairesController')->middleware('auth');
 
