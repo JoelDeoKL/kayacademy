@@ -81,12 +81,17 @@
                                 </div>
                                 @enderror
                                 <div class="mt-4">
-                                    <input type="submit" value="Commenter" class="btn pbtn-primary">
+                                    <input type="submit" value="Commenter" class="btn btn-primary">
                                 </div>
                             </div>
                         </form>
                     </div>
-                        
+
+                    <div class="mt-5" id="form">
+                        <div>
+                            <a href="/quiz/{{$chapitre->id}}" class="btn btn-primary">Passez au QUIZ</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

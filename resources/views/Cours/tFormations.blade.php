@@ -34,7 +34,7 @@
 <div class="container mt-5" style="margin-bottom:100px;"> 
     @foreach($cours as $cours)
         <div class="mt-5">
-            <a href="/cours2/{{$cours->id}}">
+            <a href="/mes_cours/{{$cours->id}}">
                 <div class="container shadow-md rounded">
                     <div class="row">
                         <div class="col-lg-3">

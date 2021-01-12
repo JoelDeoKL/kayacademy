@@ -23,4 +23,9 @@ class Chapitre extends Model
         return $this->hasMany('App\Commentaires');
     }
 
+    public function quiz()
+    {
+        return $this->hasMany('App\Quiz');
+    }
+
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Chapitre;
 use App\Module;
 use App\Commentaires;
+use App\Quiz;
 use Illuminate\Http\Request;
 
 class ChapitreController extends Controller
@@ -72,6 +73,12 @@ class ChapitreController extends Controller
         return view('cours/videos', compact('chapitres', 'commentaires'));
     }
 
+    public function quiz(Chapitre $chapitre){
+        $id = $chapitre->id;
+        $chapitres = Chapitre::where('id', '=', $id)->get();
+        $quiz = Quiz::where('chapitres_id', '=', $id)->get();
+        return view('cours/quiz', compact('quiz', 'chapitres'));
+    }
 
     /**
      * Show the form for editing the specified resource.

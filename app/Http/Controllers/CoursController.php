@@ -81,6 +81,7 @@ class CoursController extends Controller
     {
         $id = $cours->id;
         $modules = Module::where('cours_id', '=', $id)->get();
+        
         return view('cours/formation', compact('cours', 'modules'));
     }
 
