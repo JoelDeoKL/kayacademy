@@ -249,7 +249,7 @@
                     <span class="badge badge-success">{{$cours->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-primary btn-sm" href="cours/{{$cours->id}}">
+                  <a class="btn btn-primary btn-sm" href="/cours/{{$cours->id}}">
                     <i class="fas fa-folder">
                     </i>
                     View

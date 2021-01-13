@@ -42,6 +42,7 @@ Route::get('le_module/{module}', 'ModuleController@show2')->middleware('auth');
 
 Route::resource('chapitre', 'ChapitreController')->middleware('auth');
 Route::get('le_chapitre/{chapitre}', 'ChapitreController@show2')->middleware('auth');
+Route::get('quizAdd/{chapitre}', 'ChapitreController@show3')->middleware('auth');
 Route::get('quiz/{chapitre}', 'ChapitreController@quiz')->middleware('auth');
 
 Route::resource('commentaire', 'CommentairesController')->middleware('auth');

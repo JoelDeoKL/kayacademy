@@ -73,6 +73,12 @@ class ChapitreController extends Controller
         return view('cours/videos', compact('chapitres', 'commentaires'));
     }
 
+    public function show3(Chapitre $chapitre)
+    {
+        $id = $chapitre->id;
+        $chapitres = Chapitre::where('id', '=', $id)->get();
+        return view('adm.pages.examples.chapitre.quizAdd', compact('chapitres'));
+    }
     public function quiz(Chapitre $chapitre){
         $id = $chapitre->id;
         $chapitres = Chapitre::where('id', '=', $id)->get();
