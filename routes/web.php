@@ -47,6 +47,8 @@ Route::get('quiz/{chapitre}', 'ChapitreController@quiz')->middleware('auth');
 
 Route::resource('commentaire', 'CommentairesController')->middleware('auth');
 
+Route::resource('quiz', 'QuizController')->middleware('auth');
+
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');

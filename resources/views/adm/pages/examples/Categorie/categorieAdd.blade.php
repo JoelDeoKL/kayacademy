@@ -201,7 +201,7 @@
                 <i class="fas fa-minus"></i></button>
             </div>
           </div>
-          <form action="/categorie" method="POST"  enctype="multipart/form-data">
+          <form action="/categorie" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">

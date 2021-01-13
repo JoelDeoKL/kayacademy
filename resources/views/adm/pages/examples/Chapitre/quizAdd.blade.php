@@ -201,33 +201,24 @@
                 <i class="fas fa-minus"></i></button>
             </div>
           </div>
-          <form action="{{route('cours.store')}}" method="POST" enctype="multipart/form-data">
-                @csrf
+          <form action="{{route('quiz.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="inputName">Nom du cours</label>
-                    <input type="text" id="titre_cours" name="titre_cours" class="form-control @error('titre_cours') is-invalid @enderror">
-                    @error('titre_cours')
+                    <label for="inputQuestion">Question</label>
+                    <textarea id="question", name="question" class="form-control @error('question') is-invalid @enderror" rows="4"></textarea>
+                    @error('question')
                       <div class="is-invalid">
-                        {{ $errors->first('titre_cours')}}
+                        {{ $errors->first('question')}}
                       </div>
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="inputDescription">Description du cours</label>
-                    <textarea id="description", name="description" class="form-control @error('description') is-invalid @enderror" rows="4"></textarea>
-                    @error('description')
+                    <label for="inputReponse">Reponse</label>
+                    <input type="text" id="reponse" name="reponse" class="form-control @error('reponse') is-invalid @enderror">
+                    @error('reponse')
                       <div class="is-invalid">
-                        {{ $errors->first('description')}}
-                      </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="inputProjectLeader">Titulaire du Cours</label>
-                    <input type="text" id="titulaire" name="titulaire" class="form-control @error('titulaire') is-invalid @enderror">
-                    @error('titulaire')
-                      <div class="is-invalid">
-                        {{ $errors->first('titulaire')}}
+                        {{ $errors->first('reponse')}}
                       </div>
                     @enderror
                   </div>
@@ -239,7 +230,7 @@
             <div class="col-md-6">
               <div class="card card-secondary">
                 <div class="card-header">
-                  <h3 class="card-title">Detail Cours</h3>
+                  <h3 class="card-title">Assertions</h3>
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                       <i class="fas fa-minus"></i></button>
@@ -247,56 +238,68 @@
                 </div>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="inputSpentBudget">Catégorie du Cours</label>
-                    <select class="custom-select @error('categorie_id') is-invalid @enderror" name="categorie_id" id="categorie_id">
-                        <option value="">{}</option>
+                    <label for="inputRep_1">Assertion 1</label>
+                    <input type="text" id="rep_1" name="rep_1" class="form-control @error('rep_1') is-invalid @enderror">
+                    @error('rep_1')
+                      <div class="is-invalid">
+                        {{ $errors->first('rep_1') }}
+                      </div>
+                    @enderror
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputRep_1">Assertion 2</label>
+                    <input type="text" id="rep_1" name="rep_1" class="form-control @error('rep_1') is-invalid @enderror">
+                    @error('rep_1')
+                      <div class="is-invalid">
+                        {{ $errors->first('rep_1') }}
+                      </div>
+                    @enderror
+                  </div>
+                </div><div class="card-body">
+                  <div class="form-group">
+                    <label for="inputRep_3">Assertion 3</label>
+                    <input type="text" id="rep_1" name="rep_3" class="form-control @error('rep_1') is-invalid @enderror">
+                    @error('rep_3')
+                      <div class="is-invalid">
+                        {{ $errors->first('rep_3') }}
+                      </div>
+                    @enderror
+                  </div>
+                </div><div class="card-body">
+                  <div class="form-group">
+                    <label for="inputRep_4">Assertion 4</label>
+                    <input type="text" id="rep_4" name="rep_4" class="form-control @error('rep_4') is-invalid @enderror">
+                    @error('rep_4')
+                      <div class="is-invalid">
+                        {{ $errors->first('rep_4') }}
+                      </div>
+                    @enderror
+                  </div>
+                </div><div class="card-body">
+                  <div class="form-group">
+                    <label for="inputRep_5">Assertion 5</label>
+                    <input type="text" id="rep_1" name="rep_5" class="form-control @error('rep_3') is-invalid @enderror">
+                    @error('rep_5')
+                      <div class="is-invalid">
+                        {{ $errors->first('rep_5') }}
+                      </div>
+                    @enderror
+                  </div>
+                </div><div class="card-body">
+                  <div class="form-group">
+                    <label for="inputRep_1">Chapitre</label>
+                    <select class="custom-select @error('chapitres_id') is-invalid @enderror" name="chapitres_id" id="modules_id">
+                        @foreach($chapitres as $chapitre)
+                        <option value="{{$chapitre->id}}">{{$chapitre->titre_chapitre}}</option>
+                        @endforeach
                     </select>
-                    @error('categorie_id')
+                    @error('chapitres_id')
                       <div class="is-invalid">
-                        {{ $errors->first('categorie_id') }}
+                        {{ $errors->first('chapitres_id') }}
                       </div>
                     @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEstimatedBudget">Niveau du Cours</label>
-                    <input type="number" id="niveau" name="niveau" class="form-control @error('niveau') is-invalid @enderror">
-                    
-                    @error('niveau')
-                      <div class="is-invalid">
-                        {{ $errors->first('niveau') }}
-                      </div>
-                    @enderror
-
-                  </div>
-                  <div class="form-group">
-                    <label for="inputSpentBudget">Durée</label>
-                    <input type="text" id="duree" name="duree" class="form-control  @error('duree') is-invalid @enderror">
-                    @error('duree')
-                      <div class="is-invalid">
-                        {{ $errors->first('duree') }}
-                      </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="inputSpentBudget">Etat</label>
-                    <select class="custom-select @error('etat') is-invalid @enderror" name="etat" id="etat">
-                      <option value="1">Disponoble</option>
-                      <option value="0">Indisponible</option>
-                    </select>
-                    @error('etat')
-                      <div class="is-invalid">
-                        {{ $errors->first('etat') }}
-                      </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input @error('image') is-invalid @enderror" name="image" id="image">
-                      <label class="custom-file-label" for="validatedCustomFile">Chosir une image...</label>
-                      @error('image')
-                      <div class="invalid-feedback">{{$errors->first('image')}}</div>
-                      @enderror
-                    </div>
                   </div>
                 </div>
                 

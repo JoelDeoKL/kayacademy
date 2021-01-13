@@ -17,7 +17,6 @@ class CreateQuizzesTable extends Migration
             $table->id();
             $table->string('question');
             $table->string('reponse');
-            $table->integer('point');
             $table->string('rep_1');
             $table->string('rep_2');
             $table->string('rep_3');
