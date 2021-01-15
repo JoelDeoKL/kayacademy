@@ -34,23 +34,23 @@
                 </li>
                 <div>
                     <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep_1}}</label>
+                    <label for="1">{{$quiz->rep1}}</label>
                 </div>
                 <div>
                     <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep_2}}</label>
+                    <label for="1">{{$quiz->rep2}}</label>
                 </div>
                 <div>
                     <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep_3}}</label>
+                    <label for="1">{{$quiz->rep3}}</label>
                 </div>
                 <div>
                     <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep_4}}</label>
+                    <label for="1">{{$quiz->rep4}}</label>
                 </div>
                 <div>
                     <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep_5}}</label>
+                    <label for="1">{{$quiz->rep5}}</label>
                 </div>
             </ul>
         @endforeach

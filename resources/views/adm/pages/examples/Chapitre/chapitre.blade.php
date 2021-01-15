@@ -266,9 +266,7 @@
   <a href="/chapitre/create2" class="btn btn-primary my-3">Ajouter une video</a>
 </div>
 <div>
-  @foreach($chapitres as $chapitre)
-  <a href="/quizAdd/{{$chapitre->id}}" class="btn btn-primary my-3">Composer le Quiz</a>
-  @endforeach
+  <a href="{{URL('quiz/create')}}" class="btn btn-primary my-3">Composer le Quiz</a>
 </div>
   </section>
   <!-- /.content -->

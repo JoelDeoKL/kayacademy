@@ -239,10 +239,10 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="inputRep_1">Assertion 1</label>
-                    <input type="text" id="rep_1" name="rep_1" class="form-control @error('rep_1') is-invalid @enderror">
-                    @error('rep_1')
+                    <input type="text" id="rep1" name="rep1" class="form-control @error('rep1') is-invalid @enderror">
+                    @error('rep1')
                       <div class="is-invalid">
-                        {{ $errors->first('rep_1') }}
+                        {{ $errors->first('rep1') }}
                       </div>
                     @enderror
                   </div>
@@ -250,44 +250,46 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="inputRep_1">Assertion 2</label>
-                    <input type="text" id="rep_1" name="rep_1" class="form-control @error('rep_1') is-invalid @enderror">
-                    @error('rep_1')
+                    <input type="text" id="rep2" name="rep2" class="form-control @error('rep2') is-invalid @enderror">
+                    @error('rep2')
                       <div class="is-invalid">
-                        {{ $errors->first('rep_1') }}
+                        {{ $errors->first('rep2') }}
                       </div>
                     @enderror
                   </div>
-                </div><div class="card-body">
+                </div>
+                <div class="card-body">
                   <div class="form-group">
                     <label for="inputRep_3">Assertion 3</label>
-                    <input type="text" id="rep_1" name="rep_3" class="form-control @error('rep_1') is-invalid @enderror">
-                    @error('rep_3')
+                    <input type="text" id="rep3" name="rep3" class="form-control @error('rep3') is-invalid @enderror">
+                    @error('rep3')
                       <div class="is-invalid">
-                        {{ $errors->first('rep_3') }}
+                        {{ $errors->first('rep3') }}
                       </div>
                     @enderror
                   </div>
                 </div><div class="card-body">
                   <div class="form-group">
                     <label for="inputRep_4">Assertion 4</label>
-                    <input type="text" id="rep_4" name="rep_4" class="form-control @error('rep_4') is-invalid @enderror">
-                    @error('rep_4')
+                    <input type="text" id="rep4" name="rep4" class="form-control @error('rep4') is-invalid @enderror">
+                    @error('rep4')
                       <div class="is-invalid">
-                        {{ $errors->first('rep_4') }}
+                        {{ $errors->first('rep4') }}
                       </div>
                     @enderror
                   </div>
                 </div><div class="card-body">
                   <div class="form-group">
                     <label for="inputRep_5">Assertion 5</label>
-                    <input type="text" id="rep_1" name="rep_5" class="form-control @error('rep_3') is-invalid @enderror">
-                    @error('rep_5')
+                    <input type="text" id="rep5" name="rep5" class="form-control @error('rep5') is-invalid @enderror">
+                    @error('rep5')
                       <div class="is-invalid">
-                        {{ $errors->first('rep_5') }}
+                        {{ $errors->first('rep5') }}
                       </div>
                     @enderror
                   </div>
-                </div><div class="card-body">
+                </div>
+                <div class="card-body">
                   <div class="form-group">
                     <label for="inputRep_1">Chapitre</label>
                     <select class="custom-select @error('chapitres_id') is-invalid @enderror" name="chapitres_id" id="modules_id">
@@ -315,6 +317,18 @@
             </div>
           </div>
         </form>
+
+        <h1>Create</h1>
+        @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach($errors->all() as $error)
+              <li>{{$error}}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+
       </div>
     </div>
   </section>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Quiz;
+use App\Questionnaires;
 use App\Chapitre;
 use Illuminate\Http\Request;
 
@@ -25,7 +25,8 @@ class QuizController extends Controller
      */
     public function create()
     {
-        //
+        $chapitres = Chapitre::all();
+        return view('adm.pages.examples.chapitre.quizAdd', compact('chapitres'));
     }
 
     /**
@@ -36,9 +37,9 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        $quiz = Quiz::create($this->validator());
-        die($quiz);
-        return back();
+        $chapitres = Chapitre::all();
+        $questionnaires = Questionnaires::create($this->validator());
+        return view('adm.pages.examples.chapitre.quizAdd', compact('chapitres'));
     }
 
     /**
@@ -91,11 +92,11 @@ class QuizController extends Controller
         return request()->validate([
             'question' => 'required|min:3',
             'reponse' => 'required|min:3',
-            'rep_1' => 'required|min:3',
-            'rep_2' => 'required|min:3',
-            'rep_3' => 'required|min:3',
-            'rep_4' => 'required|min:3',
-            'rep_5' => 'required|min:3',
+            'rep1' => 'required|min:3',
+            'rep2' => 'required|min:3',
+            'rep3' => 'required|min:3',
+            'rep4' => 'required|min:3',
+            'rep5' => 'required|min:3',
             'chapitres_id' => 'required|integer'
         ]);
     }

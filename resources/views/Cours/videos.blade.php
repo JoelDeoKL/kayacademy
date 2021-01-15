@@ -89,7 +89,7 @@
 
                     <div class="mt-5" id="form">
                         <div>
-                            <a href="/quiz/{{$chapitre->id}}" class="btn btn-primary">Passez au QUIZ</a>
+                            <a href="/question/{{$chapitre->id}}" class="btn btn-primary">Passez au QUIZ</a>
                         </div>
                     </div>
                 </div>

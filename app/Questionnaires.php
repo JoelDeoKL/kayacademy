@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Quiz extends Model
+class Questionnaires extends Model
 {
     protected $guarded = [];
 
@@ -12,5 +12,4 @@ class Quiz extends Model
     {
         return $this->belongsTo('App\Chapitre');
     }
-
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Chapitre;
 use App\Module;
 use App\Commentaires;
-use App\Quiz;
+use App\Questionnaires;
 use Illuminate\Http\Request;
 
 class ChapitreController extends Controller
@@ -72,17 +72,10 @@ class ChapitreController extends Controller
         $commentaires = Commentaires::where('chapitres_id', '=', $id)->get();
         return view('cours/videos', compact('chapitres', 'commentaires'));
     }
-
-    public function show3(Chapitre $chapitre)
-    {
-        $id = $chapitre->id;
-        $chapitres = Chapitre::where('id', '=', $id)->get();
-        return view('adm.pages.examples.chapitre.quizAdd', compact('chapitres'));
-    }
     public function quiz(Chapitre $chapitre){
         $id = $chapitre->id;
         $chapitres = Chapitre::where('id', '=', $id)->get();
-        $quiz = Quiz::where('chapitres_id', '=', $id)->get();
+        $quiz = Questionnaires::where('chapitres_id', '=', $id)->get();
         return view('cours/quiz', compact('quiz', 'chapitres'));
     }
 
