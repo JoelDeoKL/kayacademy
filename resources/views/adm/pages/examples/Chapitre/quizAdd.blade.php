@@ -206,7 +206,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="inputQuestion">Question</label>
-                    <textarea id="question", name="question" class="form-control @error('question') is-invalid @enderror" rows="4"></textarea>
+                    <textarea id="question" name="question" class="form-control @error('question') is-invalid @enderror" rows="4"></textarea>
                     @error('question')
                       <div class="is-invalid">
                         {{ $errors->first('question')}}

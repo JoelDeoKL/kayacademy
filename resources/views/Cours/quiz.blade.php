@@ -55,6 +55,9 @@
             </ul>
         @endforeach
     </div>
+    <div class="col-lg-8 m-auto text-center">
+        <a href="#" class="btn btn-primary">Envoyer les reponses</a>
+    </div>
 </div>
 
 
