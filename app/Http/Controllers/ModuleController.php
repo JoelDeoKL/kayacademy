@@ -111,10 +111,10 @@ class ModuleController extends Controller
         ]);
     }
 
-    protected function storeImage($categories)
+    protected function storeImage($modules)
     {
         if(request('image')){
-            $categories->update([
+            $modules->update([
                 'image' => request('image')->store('images', 'public'),
             ]);
         }

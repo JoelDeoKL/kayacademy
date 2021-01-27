@@ -245,7 +245,7 @@
                   Formations Organisee
                 </td>
                 <td class="project-state">
-                    <span class="badge badge-success">{{$categorie->etat ? 'Disponible' : 'Indisponible'}}'</span>
+                    <span class="badge badge-success">{{$categorie->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
                   <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}">
