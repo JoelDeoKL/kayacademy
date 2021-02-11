@@ -28,6 +28,7 @@
         @endforeach
 
         @foreach($quiz as $quiz)
+            
             <ul>
                 <li>
                     {{$quiz->question}}
@@ -37,20 +38,20 @@
                     <label for="1">{{$quiz->rep1}}</label>
                 </div>
                 <div>
-                    <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep2}}</label>
+                    <input type="radio" name="question_1" id="2">
+                    <label for="2">{{$quiz->rep2}}</label>
                 </div>
                 <div>
-                    <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep3}}</label>
+                    <input type="radio" name="question_1" id="3">
+                    <label for="3">{{$quiz->rep3}}</label>
                 </div>
                 <div>
-                    <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep4}}</label>
+                    <input type="radio" name="question_1" id="4">
+                    <label for="4">{{$quiz->rep4}}</label>
                 </div>
                 <div>
-                    <input type="radio" name="question_1" id="1">
-                    <label for="1">{{$quiz->rep5}}</label>
+                    <input type="radio" name="question_1" id="5">
+                    <label for="5">{{$quiz->rep5}}</label>
                 </div>
             </ul>
         @endforeach

@@ -12,4 +12,9 @@ class Questionnaires extends Model
     {
         return $this->belongsTo('App\Chapitre');
     }
+
+    public function point()
+    {
+        return $this->hasMany('App\Point');
+    }
 }
