@@ -72,7 +72,7 @@ class CoursController extends Controller
      */
     public function show(Cours $cours)
     {
-        $id = $cours->id;
+        $id = 1;
         $modules = Module::where('cours_id', '=', $id)->get();
         return view('adm.pages.examples.module.module', compact('cours', 'modules'));
     }

@@ -28,7 +28,6 @@
         @endforeach
 
         @foreach($quiz as $quiz)
-            
             <ul>
                 <li>
                     {{$quiz->question}}
@@ -54,11 +53,20 @@
                     <label for="5">{{$quiz->rep5}}</label>
                 </div>
             </ul>
+
         @endforeach
+
+        <form action="{{URL('point.store')}}" method="post">
+            <input type="hidden" name="identifiant" value="">
+            <input type="hidden" name="point" value="">
+            <input type="hidden" name="quiz_id" value="">
+            <div class="col-lg-8 m-auto text-center">
+                <input type="submit" class="btn btn-primary" value="Envoyer les reponses">
+            </div>
+        </form>
+
     </div>
-    <div class="col-lg-8 m-auto text-center">
-        <a href="#" class="btn btn-primary">Envoyer les reponses</a>
-    </div>
+    
 </div>
 
 
