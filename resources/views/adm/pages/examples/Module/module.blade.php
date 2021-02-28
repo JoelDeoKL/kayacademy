@@ -274,7 +274,7 @@
                 <td class="project-actions text-right">
                   <a class="btn btn-primary btn-sm" href="/module/{{$module->id}}">
                     <i class="fas fa-folder">
-                    </i>
+           ;         </i>
                     View
                   </a>
                   <a class="btn btn-primary btn-sm" href=""?>

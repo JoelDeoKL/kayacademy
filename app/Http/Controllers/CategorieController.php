@@ -78,7 +78,7 @@ class CategorieController extends Controller
      */
     public function edit(Categorie $categorie)
     {
-        //
+        return view('adm.pages.examples.categorie.editCat', compact('categorie'));
     }
 
     /**

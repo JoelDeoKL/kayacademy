@@ -2,11 +2,11 @@
 
 @section('contentAd')
 
-<!-- Main Sidebar Container -->
+  <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="" class="brand-link">
-    <img src="{{asset('../../dist/img/k.jpg')}}" alt="KayAcademy" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="{{asset('../../dist/img/k.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">KayAcademy</span>
   </a>
 
@@ -36,15 +36,14 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-          <li class="nav-item">
-              <a href="/cours" class="nav-link">
+            <li class="nav-item">
+              <a href="/accueil" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v1</p>
               </a>
             </li>
           </ul>
         </li>
-        
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
@@ -55,14 +54,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../charts/inline.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Inline</p>
               </a>
             </li>
           </ul>
         </li>
-        
         <li class="nav-header">EXAMPLES</li>
         <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active">
@@ -74,7 +72,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/profile.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Profile</p>
               </a>
@@ -92,19 +90,19 @@
               </a>
             </li>
             <li class="nav-item">
-                <a href="/categorie" class="nav-link active">
+                <a href="/categorie" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categorie</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/categorie/create" class="nav-link">
+                <a href="/categorie/create" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Catgorie Add</p>
+                  <p>Categorie Add</p>
                 </a>
               </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/contacts.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contacts</p>
               </a>
@@ -121,43 +119,43 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/login.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Login</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/register.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Register</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/forgot-password.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Forgot Password</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/recover-password.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Recover Password</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/lockscreen.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lockscreen</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/404.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Error 404</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="../examples/500.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Error 500</p>
               </a>
@@ -166,24 +164,24 @@
         </li>
       </ul>
     </nav>
-    <!-- /.sidebar-menu -->
+      <!-- /.sidebar-menu -->
   </div>
-  <!-- /.sidebar -->
+    <!-- /.sidebar -->
 </aside>
 
-<!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Cours</h1>
+          <h1>Edit {{$categorie->nom_categorie}}</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Cours</li>
+            <li class="breadcrumb-item active">Edit</li>
           </ol>
         </div>
       </div>
@@ -192,94 +190,92 @@
 
   <!-- Main content -->
   <section class="content">
-  <!-- Default box -->
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Cours</h3>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fas fa-minus"></i></button>
-          <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fas fa-times"></i></button>
-        </div>
-      </div>
-      <div class="card-body p-0">
-        <h1>Voici les cours que nous offrons</h1>
-        <table class="table table-striped projects">
-          <thead>
-            <tr>
-              <th style="width: 1%">
-                ID
-              </th>
-              <th style="width: 15%">
-                Categorie Name
-              </th>
-              <th style="width: 15%">
-                  Description Categorie
-              </th>
-              <th style="width: 15%">
-                  Formations Comprises
-              </th>
-              <th style="width: 15%">
-                  Statuts
-              </th>
-              <th style="width: 15%">
-                  Opérations
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($categories as $categorie)
-              <tr>
-                <td>
-                <img src="{{asset('storage/' . $categorie->image)}}" class="img-thumnail" width=200 alt="categorie-image">
-                    {{$categorie->id}}
-                </td>
-                <td>
-                    {{$categorie->nom_categorie}}
-                </td>
-                <td>
-                    {{$categorie->description_categorie}}
-                </td>
-                <td>
-                  Formations Organisee
-                </td>
-                <td class="project-state">
-                    <span class="badge badge-success">{{$categorie->etat ? 'Disponible' : 'Indisponible'}}</span>
-                </td>
-                <td class="project-actions text-right">
-                  <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                  </a>
-                  <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}/edit">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                  </a>
-                  <a class="btn btn-danger btn-sm" href=""?>
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                  </a>
-                </td>
-              </tr>
-            @endforeach
-          </tbody>
-        </table>
-      </div>
-    <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-<div>
-  <a href="/categorie/create" class="btn btn-primary my-3">Ajouter une catgorie</a>
-</div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">General</h3>
 
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i></button>
+            </div>
+          </div>
+          <form action="/categorie/{{$categorie->id}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputName">Intituler Categorie</label>
+                    <input type="text" id="nom_categorie" name="nom_categorie" class="form-control @error('nom_categorie') is-invalid @enderror">
+                    @error('nom_categorie')
+                      <div class="is-invalid">
+                        {{ $errors->first('nom_categorie')}}
+                      </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="inputDescription">Description Caracteristique</label>
+                    <textarea id="description_categorie", name="description_categorie" class="form-control @error('description_categorie') is-invalid @enderror" rows="4"></textarea>
+                    @error('description_categorie')
+                      <div class="is-invalid">
+                        {{ $errors->first('description_categorie')}}
+                      </div>
+                    @enderror
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+              <div class="card card-secondary">
+                <div class="card-header">
+                  <h3 class="card-title">Detail Categorie</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                      <i class="fas fa-minus"></i></button>
+                  </div>
+                </div>
+                  <div class="form-group">
+                    <label for="inputSpentBudget">Etat</label>
+                    <select class="custom-select @error('etat') is-invalid @enderror" name="etat" id="etat">
+                      <option value="1">Disponoble</option>
+                      <option value="0">Indisponible</option>
+                    </select>
+                    @error('etat')
+                      <div class="is-invalid">
+                        {{ $errors->first('etat') }}
+                      </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input @error('image') is-invalid @enderror" name="image" id="image">
+                      <label class="custom-file-label" for="validatedCustomFile">Chosir une image...</label>
+                      @error('image')
+                      <div class="invalid-feedback">{{$errors->first('image')}}</div>
+                      @enderror
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <a href="" class="btn btn-secondary">Cancel</a>
+              <input type="submit" value="Create new Categorie" class="btn btn-success float-right">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 
 @endsection
