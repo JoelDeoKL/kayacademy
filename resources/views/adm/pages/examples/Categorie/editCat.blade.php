@@ -201,10 +201,11 @@
                 <i class="fas fa-minus"></i></button>
             </div>
           </div>
-          <form action="/categorie/{{$categorie->id}}" method="POST" enctype="multipart/form-data">
-                @csrf
+          <form action="{{ route('categorie.update', $categorie->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
                 <div class="card-body">
-                  <div class="form-group">
+                 <div class="form-group">
                     <label for="inputName">Intituler Categorie</label>
                     <input type="text" id="nom_categorie" name="nom_categorie" class="form-control @error('nom_categorie') is-invalid @enderror">
                     @error('nom_categorie')
