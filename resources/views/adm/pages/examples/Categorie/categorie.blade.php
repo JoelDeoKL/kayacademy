@@ -37,7 +37,7 @@
           </a>
           <ul class="nav nav-treeview">
           <li class="nav-item">
-              <a href="/cours" class="nav-link">
+              <a href="{{route('cours')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v1</p>
               </a>
@@ -80,25 +80,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cours" class="nav-link">
+              <a href="{{route('cours')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cours/create" class="nav-link">
+              <a href="{{route('cours/create')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours Add</p>
               </a>
             </li>
             <li class="nav-item">
-                <a href="/categorie" class="nav-link active">
+                <a href="{{route('categorie')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categorie</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/categorie/create" class="nav-link">
+                <a href="{{route('categorie/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Catgorie Add</p>
                 </a>
@@ -248,7 +248,7 @@
                     <span class="badge badge-success">{{$categorie->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}">
+                  <a class="btn btn-primary btn-sm" href="{{route('categorie', $categorie->id)}}">
                     <i class="fas fa-folder">
                     </i>
                     View
@@ -273,7 +273,7 @@
     </div>
     <!-- /.card -->
 <div>
-  <a href="/categorie/create" class="btn btn-primary my-3">Ajouter une catgorie</a>
+  <a href="{{route('categorie/create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
 </div>
 
   </section>
