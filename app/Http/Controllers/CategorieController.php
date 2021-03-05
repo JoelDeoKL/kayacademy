@@ -62,7 +62,7 @@ class CategorieController extends Controller
     {
         $id = $categorie->id;
         $cours = Cours::where('categorie_id', '=', $id)->get();
-        return view('adm.pages.examples.cours.cours', compact('categorie', 'cours'));
+        return view('adm.pages.examples.categorie.detailCategorie', compact('categorie', 'cours'));
     }
     public function show2(Categorie $categorie)
     {
