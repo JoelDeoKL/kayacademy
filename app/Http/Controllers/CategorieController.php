@@ -47,8 +47,9 @@ class CategorieController extends Controller
         $categories = Categorie::create($this->validator());
         $this->storeImage($categories);
         
-        $categories = Categorie::all();
-        return view('adm.pages.examples.categorie.categorie', compact('categories'));
+        $cours = Cours::all();
+
+        return view('adm.pages.examples.cours.cours', compact('cours'));
     }
 
     /**
@@ -67,7 +68,7 @@ class CategorieController extends Controller
     {
         $id = $categorie->id;
         $cours = Cours::where('categorie_id', '=', $id)->get();
-        return view('cours/formations', compact('categorie', 'cours'));
+        return view('cours.formations', compact('categorie', 'cours'));
     }
 
     /**
@@ -90,8 +91,16 @@ class CategorieController extends Controller
      */
     public function update(Request $request, Categorie $categorie)
     {
-        $categories = update($this->validator());
-        $this->storeImage($categories);
+        $request->validate([
+            'nom_categorie' => 'required|min:3',
+            'description_categorie' => 'required|min:3',
+            'etat' => 'required|integer',
+            'image' => 'sometimes|image|max:5000'
+        ]);
+        $categorie->update($request->all());
+        $this->storeImage($categorie);
+        $categories = Categorie::all();
+        return view('adm.pages.examples.categorie.categorie', compact('categories'));
     }
 
     /**
@@ -102,7 +111,9 @@ class CategorieController extends Controller
      */
     public function destroy(Categorie $categorie)
     {
-        //
+        $categorie->delete();
+        $categories = Categorie::all();
+        return view('adm.pages.examples.categorie.categorie', compact('categories'));
     }
 
     public function categorie()

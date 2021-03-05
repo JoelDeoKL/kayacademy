@@ -207,7 +207,7 @@
                 <div class="card-body">
                  <div class="form-group">
                     <label for="inputName">Intituler Categorie</label>
-                    <input type="text" id="nom_categorie" name="nom_categorie" class="form-control @error('nom_categorie') is-invalid @enderror">
+                    <input type="text" id="nom_categorie" name="nom_categorie" value="{{ $categorie->nom_categorie }}" class="form-control @error('nom_categorie') is-invalid @enderror">
                     @error('nom_categorie')
                       <div class="is-invalid">
                         {{ $errors->first('nom_categorie')}}
@@ -216,7 +216,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputDescription">Description Caracteristique</label>
-                    <textarea id="description_categorie", name="description_categorie" class="form-control @error('description_categorie') is-invalid @enderror" rows="4"></textarea>
+                    <textarea id="description_categorie", name="description_categorie"  class="form-control @error('description_categorie') is-invalid @enderror" rows="4"></textarea>
                     @error('description_categorie')
                       <div class="is-invalid">
                         {{ $errors->first('description_categorie')}}

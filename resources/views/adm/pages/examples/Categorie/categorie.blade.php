@@ -37,7 +37,7 @@
           </a>
           <ul class="nav nav-treeview">
           <li class="nav-item">
-              <a href="{{route('cours')}}" class="nav-link">
+              <a href="/cours" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v1</p>
               </a>
@@ -80,25 +80,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('cours')}}" class="nav-link">
+              <a href="/cours" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('cours/create')}}" class="nav-link">
+              <a href="/cours/create" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours Add</p>
               </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('categorie')}}" class="nav-link active">
+                <a href="/categorie" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categorie</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('categorie/create')}}" class="nav-link">
+                <a href="{{route('categorie.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Catgorie Add</p>
                 </a>
@@ -214,26 +214,26 @@
               <th style="width: 15%">
                 Categorie Name
               </th>
-              <th style="width: 15%">
+              <th style="width: 30%">
                   Description Categorie
-              </th>
-              <th style="width: 15%">
-                  Formations Comprises
               </th>
               <th style="width: 15%">
                   Statuts
               </th>
-              <th style="width: 15%">
+              <th style="width: 30%">
                   Opérations
               </th>
             </tr>
           </thead>
           <tbody>
+          @php
+            $i = 0;
+          @endphp
             @foreach($categories as $categorie)
               <tr>
                 <td>
                 <img src="{{asset('storage/' . $categorie->image)}}" class="img-thumnail" width=200 alt="categorie-image">
-                    {{$categorie->id}}
+                    {{ ++$i }}
                 </td>
                 <td>
                     {{$categorie->nom_categorie}}
@@ -241,28 +241,32 @@
                 <td>
                     {{$categorie->description_categorie}}
                 </td>
-                <td>
-                  Formations Organisee
-                </td>
                 <td class="project-state">
                     <span class="badge badge-success">{{$categorie->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-primary btn-sm" href="{{route('categorie', $categorie->id)}}">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                  </a>
-                  <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}/edit">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                  </a>
-                  <a class="btn btn-danger btn-sm" href=""?>
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                  </a>
+                    <form action="{{ route('categorie.destroy', $categorie->id) }}" method="POST">
+
+                      <a class="btn btn-primary btn-sm" href="{{route('categorie.show', $categorie->id)}}" title="show">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                      </a>
+                      <a class="btn btn-primary btn-sm" href="{{route('categorie.edit', $categorie->id)}}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                      </a>
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" title="delete" style="border: none; background-color:transparent;">
+                          <i class="fas fa-trash">
+                            </i>
+                            Delete
+                        </button>
+                    </form>
                 </td>
               </tr>
             @endforeach
@@ -273,7 +277,7 @@
     </div>
     <!-- /.card -->
 <div>
-  <a href="{{route('categorie/create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
+  <a href="{{route('categorie.create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
 </div>
 
   </section>
