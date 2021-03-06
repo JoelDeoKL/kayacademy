@@ -74,7 +74,7 @@ class CoursController extends Controller
     {
         $id = 1;
         $modules = Module::where('cours_id', '=', $id)->get();
-        return view('adm.pages.examples.module.module', compact('cours', 'modules'));
+        return view('adm.pages.examples.cours.coursDetail', compact('cours', 'modules'));
     }
 
     public function show2(Cours $cours)
@@ -93,7 +93,8 @@ class CoursController extends Controller
      */
     public function edit(Cours $cours)
     {
-        //
+        $categories = Categorie::all();
+        return view('adm.pages.examples.cours.editCours', compact('cours','categories'));
     }
 
     /**
@@ -105,8 +106,21 @@ class CoursController extends Controller
      */
     public function update(Request $request, Cours $cours)
     {
-        $cours = update($this->validateur());
+        $request->validate([
+            'titre_cours' => 'required|min:3',
+            'description' => 'required|min:3',
+            'titulaire' => 'required|min:3',
+            'niveau' => 'required|min:1',
+            'duree' => 'required|min:3',
+            'etat' => 'required|integer',
+            'categorie_id' => 'required|integer',
+            'image' => 'sometimes|image|max:5000'
+        ]);
+        $cours->update($request->all());
         $this->storeImage($cours);
+        $cours = Cours::all();
+        $categories = Categorie::all();
+        return view('adm.pages.examples.cours.cours', compact('cours', 'categories'));
     }
 
     /**
@@ -117,7 +131,10 @@ class CoursController extends Controller
      */
     public function destroy(Cours $cours)
     {
-        //
+        $cours->delete();
+        $cours = Cours::all();
+        $categories = Categorie::all();
+        return view('adm.pages.examples.cours.cours', compact('cours', 'categories'));
     }
 
     public function about()
