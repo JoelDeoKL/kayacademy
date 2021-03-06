@@ -36,6 +36,8 @@ Route::resource('cours', 'CoursController')->middleware('auth');
 Route::get('formations', 'CoursController@index1')->middleware('auth');
 Route::get('toutes_formations', 'CoursController@formations')->middleware('auth');
 Route::get('mes_cours/{cours}', 'CoursController@show2')->middleware('auth');
+Route::get('nos_cours/{cours}', 'CoursController@show3')->middleware('auth');
+
 
 Route::resource('module', 'ModuleController')->middleware('auth');
 Route::get('le_module/{module}', 'ModuleController@show2')->middleware('auth');

@@ -37,7 +37,7 @@
           </a>
           <ul class="nav nav-treeview">
           <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="/cours" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v1</p>
               </a>
@@ -80,7 +80,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link active">
+              <a href="/cours" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours</p>
               </a>
@@ -91,7 +91,18 @@
                 <p>Cours Add</p>
               </a>
             </li>
-          
+            <li class="nav-item">
+                <a href="/categorie" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Categorie</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('categorie.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Catgorie Add</p>
+                </a>
+              </li>
             <li class="nav-item">
               <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -167,12 +178,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Cours</h1>
+          <h1>Detail {{$cours->titre_cours}}</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Cours</li>
+            <li class="breadcrumb-item active">Detail</li>
           </ol>
         </div>
       </div>
@@ -182,37 +193,19 @@
   <!-- Main content -->
   <section class="content">
   <!-- Default box -->
-
-  <div class="card-body">
-        <div class="row">
-          <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
-            <div class="row">
-            <div class="col-12 col-sm-4">
-                <div class="info-box bg-light">
-                  <div class="info-box-content">
-                    <span class="info-box-text text-center text-muted">Name of Cours</span>
-                    <span class="info-box-number text-center text-muted mb-0">Titre</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-4">
-                <div class="info-box bg-light">
-                  <div class="info-box-content">
-                    <span class="info-box-text text-center text-muted">Level of Cours</span>
-                    <span class="info-box-number text-center text-muted mb-0">1</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-4">
-                <div class="info-box bg-light">
-                  <div class="info-box-content">
-                    <span class="info-box-text text-center text-muted">Number of Modules</span>
-                    <span class="info-box-number text-center text-muted mb-0">1</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <table class="table table-striped projects">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Detail cours</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <i class="fas fa-minus"></i></button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+            <i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <h1>Voici les modules que nous offrons dans la formation {{$cours->titre_cours}}</h1>
+        <table class="table table-striped projects">
           <thead>
             <tr>
               <th style="width: 1%">
@@ -221,86 +214,73 @@
               <th style="width: 15%">
                 Module Name
               </th>
-              <th style="width: 15%">
-                  Description Module
+              <th style="width: 30%">
+                  Description Cours
               </th>
               <th style="width: 15%">
-                  Numbre Chapter
+                  Statuts
               </th>
-              <th style="width: 15%">
-                Cours Progress
-              </th>
-              <th style="width: 8%" class="text-center">
-                Status
-              </th>
-              <th style="width: 20%">
+              <th style="width: 30%">
+                  Opérations
               </th>
             </tr>
           </thead>
           <tbody>
-          @foreach($modules as $module)
+          @php
+            $i = 0;
+          @endphp
+            @foreach($modules as $module)
               <tr>
                 <td>
-                  <img src="{{asset('storage/' . $module->image)}}" class="img-thumnail" width=200 alt="categorie-image">
-                  {{$module->id}}
+                <img src="{{asset('storage/' . $module->image)}}" class="img-thumnail" width=200 alt="module-image">
+                    {{ ++$i }}
                 </td>
                 <td>
-                  <a>
-                  {{$module->titre_module}}
-                  </a>
-                  <br/>
-                  <small>
-                    {{$module->created_at}}
-                  </small>
+                    {{$module->titre_module}}
                 </td>
                 <td>
-                  {{$module->description_module}}
-                </td>
-                <td>
-                5
-                </td>
-                <td class="project_progress">
-                  <div class="progress progress-sm">
-                      <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
-                      </div>
-                  </div>
-                  <small>
-                      57% Complete
-                  </small>
+                    {{$module->description_module}}
                 </td>
                 <td class="project-state">
                     <span class="badge badge-success">{{$module->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-primary btn-sm" href="/module/{{$module->id}}">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                  </a>
-                  <a class="btn btn-primary btn-sm" href=""?>
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                  </a>
-                  <a class="btn btn-danger btn-sm" href=""?>
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                  </a>
+                    <form action="{{ route('module.destroy', $module->id) }}" method="POST">
+
+                      <a class="btn btn-primary btn-sm" href="{{route('module.show', $module->id)}}" title="show">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                      </a>
+                      <a class="btn btn-primary btn-sm" href="{{route('module.edit', $module->id)}}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                      </a>
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" title="delete" style="border: none; background-color:transparent;">
+                          <i class="fas fa-trash">
+                            </i>
+                            Delete
+                        </button>
+                    </form>
                 </td>
               </tr>
             @endforeach
           </tbody>
         </table>
-        <div>
-          <a href="/module/create" class="btn btn-primary my-3">Ajouter un module</a>
-        </div>
-        <div>
-          <a href="/chapitre" class="btn btn-primary my-3">Voir les chapitres</a>
-        </div>
+      </div>
+    <!-- /.card-body -->
     </div>
+    <!-- /.card -->
+<div>
+  <a href="{{route('cours.create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
+</div>
 
-</section>
+  </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

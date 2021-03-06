@@ -224,7 +224,7 @@
               <th style="width: 15%">
                   Statuts
               </th>
-              <th style="width: 15%">
+              <th style="width: 35%">
                   Opérations
               </th>
             </tr>
@@ -233,14 +233,14 @@
             @foreach($cours as $cours)
               <tr>
                 <td>
-                <img src="{{asset('storage/' . $cours->categorie->image)}}" class="img-thumnail" width=200 alt="categorie-image">
+                <img src="{{asset('storage/' . $cours->image)}}" class="img-thumnail" width=200 alt="categorie-image">
                     {{$cours->id}}
                 </td>
                 <td>
                     {{$cours->titre_cours}}
                 </td>
                 <td>
-                    {{$cours->description}}
+                    {{$cours->description}}, est c'est une formation de la catégorie {{$cours->categorie->nom_categorie}}
                 </td>
                 <td>
                   {{$cours->titulaire}}
@@ -249,21 +249,28 @@
                     <span class="badge badge-success">{{$cours->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-primary btn-sm" href="/cours/{{$cours->id}}">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                  </a>
-                  <a class="btn btn-primary btn-sm" href=""?>
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                  </a>
-                  <a class="btn btn-danger btn-sm" href=""?>
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                  </a>
+                    <form action="{{ route('cours.destroy', $cours->id) }}" method="POST">
+
+                      <a class="btn btn-primary btn-sm" href="/nos_cours/{{$cours->id}}" title="show">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                      </a>
+                      <a class="btn btn-primary btn-sm" href="{{route('cours.edit', $cours->id)}}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                      </a>
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" title="delete" style="border: none; background-color:transparent;">
+                          <i class="fas fa-trash">
+                            </i>
+                            Delete
+                        </button>
+                    </form>
                 </td>
               </tr>
             @endforeach

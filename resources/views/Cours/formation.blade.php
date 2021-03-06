@@ -45,8 +45,8 @@
         <div class="col-lg-3">
             <h4>Formateur</h4>
             <img src="images/profil.jpg" class="img-fluid rounded" alt="">
-            <h5 class="mt-3">{{$module->cours->titulaire}}</h5>
-            <p>Formateur de l'equipe KayAcademy possedant des qualités énormes en {{$module->cours->titre_cours}}</p>
+            <h5 class="mt-3">$module->cours->titulaire}}</h5>
+            <p>Formateur de l'equipe KayAcademy possedant des qualités énormes en $module->cours->titre_cours}}</p>
         </div>
     </div>
 </div>

@@ -70,19 +70,19 @@ class CoursController extends Controller
      * @param  \App\Cours  $cours
      * @return \Illuminate\Http\Response
      */
-    public function show(Cours $cours)
-    {
-        $id = 1;
-        $modules = Module::where('cours_id', '=', $id)->get();
-        return view('adm.pages.examples.cours.coursDetail', compact('cours', 'modules'));
-    }
-
     public function show2(Cours $cours)
     {
         $id = $cours->id;
         $modules = Module::where('cours_id', '=', $id)->get();
         
         return view('cours/formation', compact('cours', 'modules'));
+    }
+
+    public function show3(Cours $cours)
+    {
+        $id = $cours->id;
+        $modules = Module::where('cours_id', '=', $id)->get();
+        return view('adm.pages.examples.cours.coursDetail', compact('cours', 'modules'));
     }
 
     /**
