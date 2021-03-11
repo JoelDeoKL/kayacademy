@@ -247,12 +247,12 @@
                 <td class="project-actions text-right">
                     <form action="{{ route('cours.destroy', $cours->id) }}" method="POST">
 
-                      <a class="btn btn-primary btn-sm" href="{{route('cours.show', $categorie->id)}}" title="show">
+                      <a class="btn btn-primary btn-sm" href="/nos_cours/{{$cours->id}}" title="show">
                         <i class="fas fa-folder">
                         </i>
                         View
                       </a>
-                      <a class="btn btn-primary btn-sm" href="{{route('cours.edit', $cours->id)}}">
+                      <a class="btn btn-primary btn-sm" href="/mon_cours/{{$cours->id}}/edit">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Edit
@@ -277,7 +277,7 @@
     </div>
     <!-- /.card -->
 <div>
-  <a href="{{route('cours.create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
+  <a href="{{route('cours.create')}}" class="btn btn-primary my-3">Ajouter une cours</a>
 </div>
 
   </section>

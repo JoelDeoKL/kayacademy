@@ -256,7 +256,7 @@
                         </i>
                         View
                       </a>
-                      <a class="btn btn-primary btn-sm" href="{{route('cours.edit', $cours->id)}}">
+                      <a class="btn btn-primary btn-sm" href="/mon_cours/{{$cours->id}}/edit">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Edit

@@ -277,7 +277,7 @@
     </div>
     <!-- /.card -->
 <div>
-  <a href="{{route('cours.create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
+  <a href="{{route('module.create')}}" class="btn btn-primary my-3">Ajouter une module</a>
 </div>
 
   </section>

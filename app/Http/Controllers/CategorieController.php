@@ -48,8 +48,9 @@ class CategorieController extends Controller
         $this->storeImage($categories);
         
         $cours = Cours::all();
+        $categories = Categorie::all();
 
-        return view('adm.pages.examples.cours.cours', compact('cours'));
+        return view('adm.pages.examples.categorie.categorie', compact('cours', 'categories'));
     }
 
     /**

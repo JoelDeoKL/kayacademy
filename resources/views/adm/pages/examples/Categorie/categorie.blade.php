@@ -178,7 +178,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Cours</h1>
+          <h1>Categorie</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -204,7 +204,7 @@
         </div>
       </div>
       <div class="card-body p-0">
-        <h1>Voici les cours que nous offrons</h1>
+        <h1>Voici les categories que nous offrons</h1>
         <table class="table table-striped projects">
           <thead>
             <tr>
