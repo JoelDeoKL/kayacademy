@@ -74,7 +74,9 @@ class ModuleController extends Controller
      */
     public function edit(Module $module)
     {
-        //
+        $modules = Module::all();
+        $cours = Cours::all();
+        return view('adm.pages.examples.module.editModule', compact('cours','modules'));
     }
 
     /**
