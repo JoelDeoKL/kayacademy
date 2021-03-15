@@ -216,7 +216,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputDescription">Description Caracteristique</label>
-                    <textarea id="description_categorie", name="description_categorie"  class="form-control @error('description_categorie') is-invalid @enderror" rows="4"></textarea>
+                    <textarea id="description_categorie" name="description_categorie"  class="form-control @error('description_categorie') is-invalid @enderror" rows="4"></textarea>
                     @error('description_categorie')
                       <div class="is-invalid">
                         {{ $errors->first('description_categorie')}}
