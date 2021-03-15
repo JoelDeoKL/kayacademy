@@ -239,7 +239,7 @@
                     {{$cours->titre_cours}}
                 </td>
                 <td>
-                    {{$cours->description_cours}}
+                    {{$cours->description}}
                 </td>
                 <td class="project-state">
                     <span class="badge badge-success">{{$cours->etat ? 'Disponible' : 'Indisponible'}}</span>

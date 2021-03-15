@@ -240,7 +240,7 @@
                     {{$cours->titre_cours}}
                 </td>
                 <td>
-                    {{$cours->description}}, est c'est une formation de la catégorie {{$cours->categorie->nom_categorie}}
+                    {{$cours->description}}
                 </td>
                 <td>
                   {{$cours->titulaire}}

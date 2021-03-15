@@ -207,7 +207,7 @@
                 <div class="card-body">
                 <div class="form-group">
                     <label for="inputName">Nom du cours</label>
-                    <input type="text" id="titre_cours" name="titre_cours" class="form-control @error('titre_cours') is-invalid @enderror">
+                    <input type="text" id="titre_cours" name="titre_cours" value="{{$cours->titre_cours}}" class="form-control @error('titre_cours') is-invalid @enderror">
                     @error('titre_cours')
                       <div class="is-invalid">
                         {{ $errors->first('titre_cours')}}
@@ -216,7 +216,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputDescription">Description du cours</label>
-                    <textarea id="description", name="description" class="form-control @error('description') is-invalid @enderror" rows="4"></textarea>
+                    <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror" rows="4"></textarea>
                     @error('description')
                       <div class="is-invalid">
                         {{ $errors->first('description')}}
@@ -225,7 +225,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputProjectLeader">Titulaire du Cours</label>
-                    <input type="text" id="titulaire" name="titulaire" class="form-control @error('titulaire') is-invalid @enderror">
+                    <input type="text" id="titulaire" value="{{$cours->titulaire}}" name="titulaire" class="form-control @error('titulaire') is-invalid @enderror">
                     @error('titulaire')
                       <div class="is-invalid">
                         {{ $errors->first('titulaire')}}
@@ -262,7 +262,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputEstimatedBudget">Niveau du Cours</label>
-                    <input type="number" id="niveau" name="niveau" class="form-control @error('niveau') is-invalid @enderror">
+                    <input type="number" id="niveau" value="{{$cours->niveau}}" name="niveau" class="form-control @error('niveau') is-invalid @enderror">
                     
                     @error('niveau')
                       <div class="is-invalid">
@@ -273,7 +273,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputSpentBudget">Durée</label>
-                    <input type="text" id="duree" name="duree" class="form-control  @error('duree') is-invalid @enderror">
+                    <input type="text" id="duree" value="{{$cours->duree}}" name="duree" class="form-control  @error('duree') is-invalid @enderror">
                     @error('duree')
                       <div class="is-invalid">
                         {{ $errors->first('duree') }}
