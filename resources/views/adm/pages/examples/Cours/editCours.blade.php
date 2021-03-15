@@ -205,9 +205,9 @@
             @csrf
             @method('PUT')
                 <div class="card-body">
-                 <div class="form-group">
-                    <label for="inputName">Intituler cours</label>
-                    <input type="text" id="titre_cours" name="titre_cours" value="{{ $cours->titre_cours }}" class="form-control @error('titre_cours') is-invalid @enderror">
+                <div class="form-group">
+                    <label for="inputName">Nom du cours</label>
+                    <input type="text" id="titre_cours" name="titre_cours" class="form-control @error('titre_cours') is-invalid @enderror">
                     @error('titre_cours')
                       <div class="is-invalid">
                         {{ $errors->first('titre_cours')}}
@@ -215,11 +215,20 @@
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="inputDescription">Description cours</label>
-                    <textarea id="description_cours", name="description_cours"  class="form-control @error('description_cours') is-invalid @enderror" rows="4"></textarea>
-                    @error('description_cours')
+                    <label for="inputDescription">Description du cours</label>
+                    <textarea id="description", name="description" class="form-control @error('description') is-invalid @enderror" rows="4"></textarea>
+                    @error('description')
                       <div class="is-invalid">
-                        {{ $errors->first('description_cours')}}
+                        {{ $errors->first('description')}}
+                      </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="inputProjectLeader">Titulaire du Cours</label>
+                    <input type="text" id="titulaire" name="titulaire" class="form-control @error('titulaire') is-invalid @enderror">
+                    @error('titulaire')
+                      <div class="is-invalid">
+                        {{ $errors->first('titulaire')}}
                       </div>
                     @enderror
                   </div>
@@ -231,12 +240,46 @@
             <div class="col-md-6">
               <div class="card card-secondary">
                 <div class="card-header">
-                  <h3 class="card-title">Detail Categorie</h3>
+                  <h3 class="card-title">Detail Cours</h3>
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                       <i class="fas fa-minus"></i></button>
                   </div>
                 </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputSpentBudget">Catégorie du Cours</label>
+                    <select class="custom-select @error('categorie_id') is-invalid @enderror" name="categorie_id" id="categorie_id">
+                        @foreach($categories as $categorie)
+                        <option value="{{$categorie->id}}">{{$categorie->nom_categorie}}</option>
+                        @endforeach
+                    </select>
+                    @error('categorie_id')
+                      <div class="is-invalid">
+                        {{ $errors->first('categorie_id') }}
+                      </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEstimatedBudget">Niveau du Cours</label>
+                    <input type="number" id="niveau" name="niveau" class="form-control @error('niveau') is-invalid @enderror">
+                    
+                    @error('niveau')
+                      <div class="is-invalid">
+                        {{ $errors->first('niveau') }}
+                      </div>
+                    @enderror
+
+                  </div>
+                  <div class="form-group">
+                    <label for="inputSpentBudget">Durée</label>
+                    <input type="text" id="duree" name="duree" class="form-control  @error('duree') is-invalid @enderror">
+                    @error('duree')
+                      <div class="is-invalid">
+                        {{ $errors->first('duree') }}
+                      </div>
+                    @enderror
+                  </div>
                   <div class="form-group">
                     <label for="inputSpentBudget">Etat</label>
                     <select class="custom-select @error('etat') is-invalid @enderror" name="etat" id="etat">
@@ -261,9 +304,6 @@
                 </div>
                 
                 <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-            </div>
           </div>
           <div class="row">
             <div class="col-12">
@@ -278,5 +318,18 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<div>
+  <h1>UPDATE</h1>
+  @if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+      @foreach($errors->all() as $error)
+      <li>{{$error}}</li>
+      @endforeach
+      </ul>
+  </div>
+  @endif
+</div>
 
 @endsection
