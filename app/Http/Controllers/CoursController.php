@@ -106,6 +106,7 @@ class CoursController extends Controller
      */
     public function update(Request $request, Cours $cours)
     {
+        die($cours);
         $request->validate([
             'titre_cours' => 'required|min:3',
             'description' => 'required|min:3',
