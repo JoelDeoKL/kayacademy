@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'CategorieController@index1');
 
 Route::resource('categorie', 'CategorieController')->middleware('auth');
+
 Route::get('les_categories', 'CategorieController@categorie')->middleware('auth');
 Route::get('categories/{categorie}', 'CategorieController@show2')->middleware('auth');
 
