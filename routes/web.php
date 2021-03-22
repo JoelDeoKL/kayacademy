@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'CategorieController@index1');
 
-Route::resource('categorie', 'CategorieController')->middleware('auth');
-
+//Route::resource('categorie', 'CategorieController')->middleware('auth');
+Route::get('categorie', 'CategorieController@index')->middleware('auth');
+Route::get('categorie/create', 'CategorieController@create')->middleware('auth');
+Route::post('categorie', 'CategorieController@store')->middleware('auth');
+Route::get('categorie/{categorie}', 'CategorieController@show')->middleware('auth');
 Route::get('les_categories', 'CategorieController@categorie')->middleware('auth');
-Route::get('categories/{categorie}', 'CategorieController@show2')->middleware('auth');
+Route::get('categorie/{categorie}', 'CategorieController@show2')->middleware('auth');
+Route::get('categorie/{categorie}/edit', 'CategorieController@edit')->middleware('auth');
+Route::put('categorie/{categorie}', 'CategorieController@update')->middleware('auth');
+Route::delete('categorie/{categorie}', 'CategorieController@destroy')->middleware('auth');
 
 Route::view('about', '/cours/about');
 Route::view('certification', '/cours/certification');
