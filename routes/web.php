@@ -15,15 +15,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'CategorieController@index1');
 
 //Route::resource('categorie', 'CategorieController')->middleware('auth');
-Route::get('categorie', 'CategorieController@index')->middleware('auth');
-Route::get('categorie/create', 'CategorieController@create')->middleware('auth');
-Route::post('categorie', 'CategorieController@store')->middleware('auth');
-Route::get('categorie/{categorie}', 'CategorieController@show')->middleware('auth');
-Route::get('les_categories', 'CategorieController@categorie')->middleware('auth');
-Route::get('categorie/{categorie}', 'CategorieController@show2')->middleware('auth');
-Route::get('categorie/{categorie}/edit', 'CategorieController@edit')->middleware('auth');
-Route::put('categorie/{categorie}', 'CategorieController@update')->middleware('auth');
-Route::delete('categorie/{categorie}', 'CategorieController@destroy')->middleware('auth');
 
 Route::view('about', '/cours/about');
 Route::view('certification', '/cours/certification');
@@ -39,16 +30,35 @@ Route::view('videos', '/cours/videos')->middleware('auth');
 
 Route::view('accueil', '/adm/pages/examples/accueil');
 
-Route::resource('cours', 'CoursController')->middleware('auth');
+Route::get('categorie', 'CategorieController@index')->middleware('auth');
+Route::get('categorie/create', 'CategorieController@create')->middleware('auth');
+Route::post('categorie', 'CategorieController@store')->middleware('auth');
+Route::get('categorie/{categorie}', 'CategorieController@show')->middleware('auth');
+Route::get('les_categories', 'CategorieController@categorie')->middleware('auth');
+Route::get('categorie/{categorie}', 'CategorieController@show2')->middleware('auth');
+Route::get('categorie/{categorie}/edit', 'CategorieController@edit')->middleware('auth');
+Route::put('categorie/{categorie}', 'CategorieController@update')->middleware('auth');
+Route::delete('categorie/{categorie}', 'CategorieController@destroy')->middleware('auth');
+
+//Route::resource('cours', 'CoursController')->middleware('auth');
 Route::get('formations', 'CoursController@index1')->middleware('auth');
 Route::get('toutes_formations', 'CoursController@formations')->middleware('auth');
 Route::get('mes_cours/{cours}', 'CoursController@show2')->middleware('auth');
 Route::get('nos_cours/{cours}', 'CoursController@show3')->middleware('auth');
 Route::get('mon_cours/{cours}/edit', 'CoursController@edit')->middleware('auth');
+Route::get('cours', 'CoursController@index')->middleware('auth');
+Route::get('cours/create', 'CoursController@create')->middleware('auth');
+Route::post('cours', 'CoursController@store')->middleware('auth');
+Route::get('cours/{cours}', 'CoursController@show')->middleware('auth');
+Route::get('cours/{cours}', 'CoursController@edit')->middleware('auth');
+Route::put('cours/{cours}', 'CoursController@update')->middleware('auth');
+Route::delete('cours/{cours}', 'CoursController@destroy')->middleware('auth');
 
 
 Route::resource('module', 'ModuleController')->middleware('auth');
 Route::get('le_module/{module}', 'ModuleController@show2')->middleware('auth');
+
+Route::get('cours', '');
 
 Route::resource('chapitre', 'ChapitreController')->middleware('auth');
 Route::get('le_chapitre/{chapitre}', 'ChapitreController@show2')->middleware('auth');
