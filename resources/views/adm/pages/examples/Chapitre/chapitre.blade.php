@@ -263,9 +263,6 @@
 </div>
 
 <div>
-  <a href="/chapitre/create2" class="btn btn-primary my-3">Ajouter une video</a>
-</div>
-<div>
   <a href="{{URL('quiz/create')}}" class="btn btn-primary my-3">Composer le Quiz</a>
 </div>
   </section>
