@@ -209,11 +209,8 @@
               <th style="width: 15%">
                   Vidoes comprises
               </th>
-              <th style="width: 15%">
+              <th style="width: 16%">
                   Statuts
-              </th>
-              <th style="width: 15%">
-                  Opérations
               </th>
             </tr>
           </thead>
