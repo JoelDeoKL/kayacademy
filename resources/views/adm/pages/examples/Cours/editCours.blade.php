@@ -308,7 +308,7 @@
           <div class="row">
             <div class="col-12">
               <a href="" class="btn btn-secondary">Cancel</a>
-              <input type="submit" value="Create new Categorie" class="btn btn-success float-right">
+              <input type="submit" value="Edit {{$cours->titre_cours}}" class="btn btn-success float-right">
             </div>
           </div>
         </form>
