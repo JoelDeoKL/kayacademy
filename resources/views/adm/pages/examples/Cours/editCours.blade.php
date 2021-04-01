@@ -201,7 +201,7 @@
                 <i class="fas fa-minus"></i></button>
             </div>
           </div>
-          <form action="{{ route('cours.update', $cours->id) }}" method="POST" enctype="multipart/form-data">
+          <form action="/_cours/{{$cours->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
                 <div class="card-body">
