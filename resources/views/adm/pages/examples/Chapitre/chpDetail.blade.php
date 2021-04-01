@@ -238,7 +238,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header"> 
-          <h3 class="card-title">Chapter Vidéos</h6></h3>
+          <h3 class="card-title">Vidéo</h6></h3>
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fas fa-minus"></i></button>
@@ -250,7 +250,7 @@
 
         <div class="card-body">
         <div class="container mt-5" style="margin-bottom: 100px;">
-        <h1>Voici le chapitre {{$chapitre->titre_chapitre}}</h1>
+        <h3>Chapitre : <em>{{$chapitre->titre_chapitre}}</em></h3>
 
     <div class="row">
 
