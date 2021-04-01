@@ -249,7 +249,7 @@
                     <span class="badge badge-success">{{$cours->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                    <form action="{{ route('cours.destroy', $cours->id) }}" method="POST">
+                    <form action="/_cours/{{$cours->id}}" method="POST">
 
                       <a class="btn btn-primary btn-sm" href="/nos_cours/{{$cours->id}}" title="show">
                         <i class="fas fa-folder">

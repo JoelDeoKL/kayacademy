@@ -39,6 +39,7 @@ Route::get('mes_cours/{cours}', 'CoursController@show2')->middleware('auth');
 Route::get('nos_cours/{cours}', 'CoursController@show3')->middleware('auth');
 Route::get('mon_cours/{cours}/edit', 'CoursController@edit')->middleware('auth');
 Route::put('_cours/{cours}', 'CoursController@update')->middleware('auth');
+Route::delete('_cours/{cours}', 'CoursController@destroy')->middleware('auth');
 
 
 Route::resource('module', 'ModuleController')->middleware('auth');
