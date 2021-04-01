@@ -255,17 +255,14 @@
     <div class="row">
 
         <div class="col-lg-8 rounded">
+            <br>
             {{$chapitre->lien}}
             <video src="videos/r.mp4" controls poster="{{asset('images/front-end-nd0011-hero-image.jpg')}}" class="img-fluid rounded-top"></video>
         </div>
         <div class="col-lg-4">
+          <br>
             <h2 class="text-primary">Détails de la video</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas iure, asperiores quam aperiam, modi saepe cupiditate dolor voluptate earum, eligendi laborum officiis aut quaerat dolorem et delectus accusamus commodi accusantium. : </p>
-                <ul>
-                    <li>Eaque fuga non vel quae vitae alias, quod eligendi.</li>
-                    <li>Eaque fuga non vel quae vitae alias, quod eligendi.</li>
-                    <li>Eaque fuga non vel quae vitae alias, quod eligendi.</li>
-                </ul>
+            <p>Dans ce chapitre nous parlons de {{$chapitre->description_chapitre}}</p>
         </div>
         <div class="col-lg-8 mt-5">
             <nav>
