@@ -236,7 +236,7 @@
                     </i>
                     View
                   </a>
-                  <a class="btn btn-primary btn-sm" href="{{route('module.edit', $module->id)}}"?>
+                  <a class="btn btn-primary btn-sm" href="{{route('chapitre.edit', $chapitre->id)}}"?>
                     <i class="fas fa-pencil-alt">
                     </i>
                     Edit

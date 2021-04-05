@@ -197,6 +197,7 @@
           </div>
           <form action="{{ route('chapitre.update', $chapitre->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
                     <label for="inputName">Intituler chapitre</label>
