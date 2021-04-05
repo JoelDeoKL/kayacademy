@@ -193,7 +193,7 @@
         </div>
       </div>
       <div class="card-body p-0">
-        <h1>Voici les chapitres inclus dans ce module</h1>
+        <h1>Voici les chapitres inclus que nous offrons dans l'ensemble des nos formations</h1>
         <table class="table table-striped projects">
           <thead>
             <tr>
