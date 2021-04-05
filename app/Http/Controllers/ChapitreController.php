@@ -87,7 +87,8 @@ class ChapitreController extends Controller
      */
     public function edit(Chapitre $chapitre)
     {
-        //
+        $modules = Module::all();
+        return view('adm.pages.examples.chapitre.editChap', compact('chapitre','modules'));
     }
 
     /**
