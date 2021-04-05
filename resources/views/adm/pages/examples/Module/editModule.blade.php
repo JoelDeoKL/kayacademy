@@ -195,25 +195,26 @@
                 <i class="fas fa-minus"></i></button>
             </div>
           </div>
+          
           <form action="{{ route('module.update', $module->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-                <div class="card-body">
-                 <div class="form-group">
+            <div class="card-body">
+                  <div class="form-group">
                     <label for="inputName">Titre Module</label>
-                    <input type="text" id="titre_cours" name="titre_cours" value="{{ $cours->titre_cours }}" class="form-control @error('titre_cours') is-invalid @enderror">
-                    @error('titre_cours')
+                    <input type="text" id="titre_module" name="titre_module" value="{{$module->titre_module}}" class="form-control @error('titre_cours') is-invalid @enderror">
+                    @error('titre_module')
                       <div class="is-invalid">
-                        {{ $errors->first('titre_cours')}}
+                        {{ $errors->first('titre_module')}}
                       </div>
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="inputDescription">Description cours</label>
-                    <textarea id="description_cours", name="description_cours"  class="form-control @error('description_cours') is-invalid @enderror" rows="4"></textarea>
-                    @error('description_cours')
+                    <label for="inputDescription">Description du module</label>
+                    <textarea id="description_module" name="description_module" class="form-control @error('description_module') is-invalid @enderror" rows="4"></textarea>
+                    @error('description_module')
                       <div class="is-invalid">
-                        {{ $errors->first('description_cours')}}
+                        {{ $errors->first('description_module')}}
                       </div>
                     @enderror
                   </div>
@@ -225,12 +226,26 @@
             <div class="col-md-6">
               <div class="card card-secondary">
                 <div class="card-header">
-                  <h3 class="card-title">Detail Categorie</h3>
+                  <h3 class="card-title">Detail Cours</h3>
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                       <i class="fas fa-minus"></i></button>
                   </div>
                 </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputSpentBudget">Cours</label>
+                    <select class="custom-select @error('cours_id') is-invalid @enderror" name="cours_id" id="cours_id">
+                        @foreach($cours as $cours)
+                        <option value="{{$cours->id}}">{{$cours->titre_cours}}</option>
+                        @endforeach
+                    </select>
+                    @error('cours_id')
+                      <div class="is-invalid">
+                        {{ $errors->first('cours_id') }}
+                      </div>
+                    @enderror
+                  </div>
                   <div class="form-group">
                     <label for="inputSpentBudget">Etat</label>
                     <select class="custom-select @error('etat') is-invalid @enderror" name="etat" id="etat">
@@ -262,7 +277,7 @@
           <div class="row">
             <div class="col-12">
               <a href="" class="btn btn-secondary">Cancel</a>
-              <input type="submit" value="Create new Categorie" class="btn btn-success float-right">
+              <input type="submit" value="Create new Cours" class="btn btn-success float-right">
             </div>
           </div>
         </form>

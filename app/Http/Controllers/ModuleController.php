@@ -74,9 +74,8 @@ class ModuleController extends Controller
      */
     public function edit(Module $module)
     {
-        $modules = Module::all();
         $cours = Cours::all();
-        return view('adm.pages.examples.module.editModule', compact('cours','modules'));
+        return view('adm.pages.examples.module.editModule', compact('cours','module'));
     }
 
     /**
@@ -88,8 +87,19 @@ class ModuleController extends Controller
      */
     public function update(Request $request, Module $module)
     {
-        $modules = update($this->validator());
-        $this->storeImage($modules);
+        $request->validate([
+            'titre_module' => 'required|min:3',
+            'description_module' => 'required|min:3',
+            'etat' => 'required|integer',
+            'cours_id' => 'required|integer',
+            'image' => 'sometimes|image|max:5000'
+        ]);
+
+        $module->update($request->all());
+        $this->storeImage($module);
+        $cours = Cours::all();
+        $modules = Module::all();
+        return view('adm.pages.examples.module.module', compact('cours', 'modules'));
     }
 
     /**
