@@ -182,8 +182,20 @@
   <!-- Main content -->
   <section class="content">
   <!-- Default box -->
-
-  <div class="card-body">
+  <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Modules</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <i class="fas fa-minus"></i></button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+            <i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <h1>Voici tous les modules que nous offrons dans diverses cours</h1>
+        <table class="table table-striped projects">
+        <div class="card-body">
         <div class="row">
           <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
             <div class="row">
@@ -222,18 +234,15 @@
                 Module Name
               </th>
               <th style="width: 15%">
-                  Description Module
+                Module Description
               </th>
               <th style="width: 15%">
-                  Numbre Chapter
+                module progress
               </th>
               <th style="width: 15%">
-                Cours Progress
+                  Statuts
               </th>
-              <th style="width: 8%" class="text-center">
-                Status
-              </th>
-              <th style="width: 35%">
+              <th style="width: 25%">
                   Opérations
               </th>
             </tr>
@@ -257,9 +266,6 @@
                 <td>
                   {{$module->description_module}}
                 </td>
-                <td>
-                5
-                </td>
                 <td class="project_progress">
                   <div class="progress progress-sm">
                       <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
@@ -275,7 +281,7 @@
                 <td class="project-actions text-right">
                   <a class="btn btn-primary btn-sm" href="/module/{{$module->id}}">
                     <i class="fas fa-folder">
-           ;         </i>
+                     </i>
                     View
                   </a>
                   <a class="btn btn-primary btn-sm" href=""?>
