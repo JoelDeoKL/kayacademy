@@ -55,7 +55,7 @@ class ModuleController extends Controller
     {
         $id = $module->id;
         $chapitres = Chapitre::where('modules_id', '=', $id)->get();
-        return view('adm.pages.examples.chapitre.chapitre', compact('module', 'chapitres'));
+        return view('adm.pages.examples.module.moduleDetail', compact('module', 'chapitres'));
     }
 
     public function show2(Module $module)

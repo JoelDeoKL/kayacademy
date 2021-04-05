@@ -98,7 +98,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('categorie.create')}}" class="nav-link">
+                <a href="/categorie/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Catgorie Add</p>
                 </a>
@@ -245,14 +245,14 @@
                     <span class="badge badge-success">{{$categorie->etat ? 'Disponible' : 'Indisponible'}}</span>
                 </td>
                 <td class="project-actions text-right">
-                    <form action="{{ route('categorie.destroy', $categorie->id) }}" method="POST">
+                    <form action="/categorie/{{$categorie->id}}/destroy" method="POST">
 
-                      <a class="btn btn-primary btn-sm" href="{{route('categorie.show', $categorie->id)}}" title="show">
+                      <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}" title="show">
                         <i class="fas fa-folder">
                         </i>
                         View
                       </a>
-                      <a class="btn btn-primary btn-sm" href="{{route('categorie.edit', $categorie->id)}}">
+                      <a class="btn btn-primary btn-sm" href="/categorie/{{$categorie->id}}/edit">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Edit
@@ -277,7 +277,7 @@
     </div>
     <!-- /.card -->
 <div>
-  <a href="{{route('categorie.create')}}" class="btn btn-primary my-3">Ajouter une catgorie</a>
+  <a href="/categorie/create" class="btn btn-primary my-3">Ajouter une catgorie</a>
 </div>
 
   </section>
