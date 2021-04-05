@@ -209,7 +209,7 @@
               <th style="width: 15%">
                   Vidoes comprises
               </th>
-              <th style="width: 16%">
+              <th style="width: 25%">
                   Statuts
               </th>
             </tr>
