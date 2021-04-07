@@ -2,11 +2,11 @@
 
 @section('contentAd')
 
-  <!-- Main Sidebar Container -->
+<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="" class="brand-link">
-    <img src="{{asset('../../dist/img/k.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="{{asset('../../dist/img/k.jpg')}}" alt="KayAcademy" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">KayAcademy</span>
   </a>
 
@@ -36,14 +36,15 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="../../index.php" class="nav-link">
+          <li class="nav-item">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v1</p>
               </a>
             </li>
           </ul>
         </li>
+        
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
@@ -54,13 +55,14 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../charts/inline.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Inline</p>
               </a>
             </li>
           </ul>
         </li>
+        
         <li class="nav-header">EXAMPLES</li>
         <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active">
@@ -72,31 +74,26 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../examples/profile.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Profile</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cours" class="nav-link">
+              <a href="" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/cours/create" class="nav-link active">
+              <a href="/cours/create" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cours Add</p>
               </a>
             </li>
+          
             <li class="nav-item">
-              <a href="../examples/admin_add.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Admin Add</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="../examples/contacts.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contacts</p>
               </a>
@@ -113,43 +110,43 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../examples/login.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Login</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../examples/register.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Register</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../examples/forgot-password.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Forgot Password</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../examples/recover-password.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Recover Password</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../examples/lockscreen.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lockscreen</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../examples/404.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Error 404</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../examples/500.php" class="nav-link">
+              <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Error 500</p>
               </a>
@@ -158,24 +155,24 @@
         </li>
       </ul>
     </nav>
-      <!-- /.sidebar-menu -->
+    <!-- /.sidebar-menu -->
   </div>
-    <!-- /.sidebar -->
+  <!-- /.sidebar -->
 </aside>
 
-  <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Cours Add</h1>
+          <h1>Cours</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Cours Add</li>
+            <li class="breadcrumb-item active">Chapitre</li>
           </ol>
         </div>
       </div>
@@ -184,118 +181,91 @@
 
   <!-- Main content -->
   <section class="content">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">General</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                <i class="fas fa-minus"></i></button>
-            </div>
-          </div>
-          <form action="/chapitre" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="inputName">Intituler chapitre</label>
-                    <input type="text" id="titre_chapitre" name="titre_chapitre" class="form-control @error('titre_chapitre') is-invalid @enderror">
-                    @error('titre_chapitre')
-                      <div class="is-invalid">
-                        {{ $errors->first('titre_chapitre')}}
-                      </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="inputDescription">Description du chapitre</label>
-                    <textarea id="description_chapitre", name="description_chapitre" class="form-control @error('description_chapitre') is-invalid @enderror" rows="4"></textarea>
-                    @error('description_chapitre')
-                      <div class="is-invalid">
-                        {{ $errors->first('description_chapitre')}}
-                      </div>
-                    @enderror
-                  </div>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-            </div>
-            <div class="col-md-6">
-              <div class="card card-secondary">
-                <div class="card-header">
-                  <h3 class="card-title">Detail Chapitre</h3>
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                      <i class="fas fa-minus"></i></button>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="card-body">
-                        <label for="inputProjectLeader">Lien de la video</label>
-                        <input type="text" id="videos" name="videos" class="form-control @error('videos') is-invalid @enderror">
-                        @error('videos')
-                        <div class="is-invalid">
-                            {{ $errors->first('videos')}}
-                        </div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="card-body">
-                        <label for="inputProjectLeader">Texte de la video</label>
-                        <textarea id="texte", name="texte" class="form-control @error('texte') is-invalid @enderror" rows="4"></textarea>
-                        @error('texte')
-                        <div class="is-invalid">
-                            {{ $errors->first('texte')}}
-                        </div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group">
-                <div class="card-body">
-                    <label for="inputSpentBudget">Module</label>
-                    <select class="custom-select @error('modules_id') is-invalid @enderror" name="modules_id" id="modules_id">
-                        @foreach($modules as $module)
-                        <option value="{{$module->id}}">{{$module->titre_module}}</option>
-                        @endforeach
-                    </select>
-                    @error('modules_id')
-                      <div class="is-invalid">
-                        {{ $errors->first('modules_id') }}
-                      </div>
-                    @enderror
-                  </div>
-                </div>
-                <div class="form-group">
-                <div class="card-body">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input @error('image') is-invalid @enderror" name="image" id="image">
-                        <label class="custom-file-label" for="validatedCustomFile">Chosir une image...</label>
-                        @error('image')
-                        <div class="invalid-feedback">{{$errors->first('image')}}</div>
-                        @enderror
-                    </div>
-                    </div>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <a href="" class="btn btn-secondary">Cancel</a>
-              <input type="submit" value="Create new Chapitre" class="btn btn-success float-right">
-            </div>
-          </div>
-        </form>
+  <!-- Default box -->
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Cours</h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <i class="fas fa-minus"></i></button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+            <i class="fas fa-times"></i></button>
+        </div>
       </div>
+      <div class="card-body p-0">
+        <h1>Voici les chapitres nours offront dans le module {{$module->titre_module}}</h1>
+        <table class="table table-striped projects">
+          <thead>
+            <tr>
+              <th style="width: 1%">
+                ID
+              </th>
+              <th style="width: 15%">
+                Titre Chapitre
+              </th>
+              <th style="width: 15%">
+                  Description Chapitre
+              </th>
+              <th style="width: 10">
+                  Vidoes comprises
+              </th>
+              <th style="width: 25%">
+                  Statuts
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($chapitres as $chapitre)
+              <tr>
+                <td>
+                <img src="{{asset('storage/' . $chapitre->image)}}" class="img-thumnail" width=200 alt="categorie-image">
+                    {{$chapitre->id}}
+                </td>
+                <td>
+                    {{$chapitre->titre_chapitre}}
+                </td>
+                <td>
+                    {{$chapitre->description_chapitre}}
+                </td>
+                <td>
+                  6
+                </td>
+                <td class="project-actions text-right">
+                  <a class="btn btn-primary btn-sm" href="/chapitre/{{$chapitre->id}}">
+                    <i class="fas fa-folder">
+                    </i>
+                    View
+                  </a>
+                  <a class="btn btn-primary btn-sm" href="{{route('chapitre.edit', $chapitre->id)}}"?>
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Edit
+                  </a>
+                  <a class="btn btn-danger btn-sm" href=""?>
+                    <i class="fas fa-trash">
+                    </i>
+                    Delete
+                  </a>
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    <!-- /.card-body -->
     </div>
+    <!-- /.card -->
+<div>
+  <a href="/chapitre/create" class="btn btn-primary my-3">Ajouter un chapitre</a>
+</div>
+
+<div>
+  <a href="{{URL('quiz/create')}}" class="btn btn-primary my-3">Composer le Quiz</a>
+</div>
   </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
 
 @endsection

@@ -87,7 +87,8 @@ class ChapitreController extends Controller
      */
     public function edit(Chapitre $chapitre)
     {
-        //
+        $modules = Module::all();
+        return view('adm.pages.examples.chapitre.editChap', compact('chapitre','modules'));
     }
 
     /**
@@ -99,8 +100,20 @@ class ChapitreController extends Controller
      */
     public function update(Request $request, Chapitre $chapitre)
     {
-        $chapitres = update($this->validator());
-        $this->storeImage($chapitres);
+        $request->validate([
+            'titre_chapitre' => 'required|min:3',
+            'description_chapitre' => 'required|min:3',
+            'videos' => 'required|min:3',
+            'texte' => 'required|min:3',
+            'modules_id' => 'required|integer',
+            'image' => 'sometimes|image|max:5000'
+        ]);
+
+        $chapitre->update($request->all());
+        $this->storeImage($chapitre);
+        $chapitres = Chapitre::all();
+        $modules = Module::all();
+        return view('adm.pages.examples.chapitre.chapitre', compact('chapitres', 'modules'));
     }
 
     /**

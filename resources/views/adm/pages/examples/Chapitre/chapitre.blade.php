@@ -209,7 +209,7 @@
               <th style="width: 15%">
                   Vidoes comprises
               </th>
-              <th style="width: 16%">
+              <th style="width: 25%">
                   Statuts
               </th>
             </tr>
@@ -236,7 +236,7 @@
                     </i>
                     View
                   </a>
-                  <a class="btn btn-primary btn-sm" href=""?>
+                  <a class="btn btn-primary btn-sm" href="{{route('chapitre.edit', $chapitre->id)}}"?>
                     <i class="fas fa-pencil-alt">
                     </i>
                     Edit
