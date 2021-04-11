@@ -9,8 +9,8 @@
                     <div class="">
                         <div class="col-lg-4 m-auto rounded shadow-md mb-5 pt-3 pb-3" style="background:white;">
                         <center>
-                            <h1>Inscription</h1>
-                            <p>Inscrivez-vous avec votre adresse email</p>
+                            <h1>Connectez-vous</h1>
+                            <p>Renseigner votre adresse email et votre mot de passe afin de s'authentifier</p>
                         </center>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

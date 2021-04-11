@@ -27,14 +27,14 @@ class CoursController extends Controller
         $categories = Categorie::all();
         $cours = Cours::all();
 
-        return view('adm.pages.examples.cours.cours', compact('cours', 'categories'));
+        return view('adm.pages.examples.cours.cours*', compact('cours', 'categories'));
     }
 
     public function formations()
     {
         // $cours = Cours::etat();
         $cours = Cours::all();
-        return view('cours.tFormations', compact('cours'));
+        return view('cours.tFormation', compact('cours'));
     }
 
     /**
